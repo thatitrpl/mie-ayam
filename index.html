@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Mie Ayam - Lezat & Nikmat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .active {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        /* Animation Classes */
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.5s ease-out;
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.5s ease-out;
+        }
+
+        .slide-in-bottom {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s ease-out;
+        }
+
+        .animate {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+        }
+
+        /* Delay Classes */
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+        .delay-400 {
+            transition-delay: 400ms;
+        }
+    </style>
+</head>
+<body class="font-sans bg-amber-50 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="bg-amber-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4 slide-in-left">
+                    <i class="fas fa-utensils text-2xl text-amber-300"></i>
+                    <span class="text-xl font-bold">Warung Mie Ayam</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact Us</a>
+                    <a href="#order" class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full font-medium transition duration-300 slide-in-right">Order Now</a>
+                </div>
+                <div class="md:hidden slide-in-right">
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-amber-800 px-6 py-4">
+            <a href="#home" class="block py-2 text-white hover:text-amber-300">Home</a>
+            <a href="#menu" class="block py-2 text-white hover:text-amber-300">Menu</a>
+            <a href="#about" class="block py-2 text-white hover:text-amber-300">About</a>
+            <a href="#contact" class="block py-2 text-white hover:text-amber-300">Contact Us</a>
+            <a href="#order" class="block mt-2 bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full font-medium text-center transition duration-300">Order Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero h-screen flex items-center justify-center text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 slide-in-bottom">Mie Ayam Spesial <span class="text-amber-300">Warung Kami</span></h1>
+            <p class="text-xl md:text-2xl mb-8 slide-in-bottom delay-100">Rasa autentik dengan rempah pilihan yang menggugah selera</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 slide-in-bottom delay-200">
+                <a href="#menu" class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-medium text-lg transition duration-300">Lihat Menu</a>
+                <a href="#order" class="bg-transparent border-2 border-white hover:bg-white hover:text-amber-900 text-white px-8 py-3 rounded-full font-medium text-lg transition duration-300">Pesan Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4 slide-in-left">Menu Spesial Kami</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto slide-in-left delay-100"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto slide-in-left delay-200">Nikmati berbagai varian mie ayam dengan bahan berkualitas dan racikan bumbu rahasia kami</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md transition duration-300 slide-in-right">
+                    <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="Mie Ayam Original" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-amber-900">Mie Ayam Original</h3>
+                            <span class="text-amber-500 font-bold">Rp 15.000</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Mie ayam dengan potongan daging ayam yang melimpah dan bumbu rahasia.</p>
+                        <button class="w-full bg-amber-100 hover:bg-amber-200 text-amber-800 py-2 rounded-full font-medium transition duration-300">
+                            <i class="fas fa-cart-plus mr-2"></i> Pesan Sekarang
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 2 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md transition duration-300 slide-in-right delay-100">
+                    <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mie Ayam Bakso" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-amber-900">Mie Ayam Bakso</h3>
+                            <span class="text-amber-500 font-bold">Rp 20.000</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Mie ayam dengan tambahan bakso urat sapi pilihan yang kenyal dan gurih.</p>
+                        <button class="w-full bg-amber-100 hover:bg-amber-200 text-amber-800 py-2 rounded-full font-medium transition duration-300">
+                            <i class="fas fa-cart-plus mr-2"></i> Pesan Sekarang
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 3 -->
+                <div class="menu-item bg-white rounded-lg overflow-hidden shadow-md transition duration-300 slide-in-right delay-200">
+                    <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mie Ayam Jamur" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-amber-900">Mie Ayam Jamur</h3>
+                            <span class="text-amber-500 font-bold">Rp 18.000</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Mie ayam dengan tambahan jamur kuping yang renyah dan bumbu spesial.</p>
+                        <button class="w-full bg-amber-100 hover:bg-amber-200 text-amber-800 py-2 rounded-full font-medium transition duration-300">
+                            <i class="fas fa-cart-plus mr-2"></i> Pesan Sekarang
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 slide-in-bottom">
+                <a href="#" class="inline-block border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white px-8 py-3 rounded-full font-medium text-lg transition duration-300">Lihat Semua Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-amber-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8 slide-in-left">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Warung Mie Ayam" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2 slide-in-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-6">Tentang Warung Kami</h2>
+                    <p class="text-gray-700 mb-4">Warung Mie Ayam kami berdiri sejak tahun 2010 dengan komitmen untuk menyajikan mie ayam dengan cita rasa autentik dan bahan-bahan berkualitas.</p>
+                    <p class="text-gray-700 mb-6">Kami menggunakan resep turun-temurun yang telah disempurnakan selama bertahun-tahun, dengan rempah-rempah pilihan dan proses pembuatan yang higienis.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center slide-in-left delay-100">
+                            <div class="bg-amber-500 rounded-full p-2 mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-gray-700">Bahan Segar</span>
+                        </div>
+                        <div class="flex items-center slide-in-right delay-100">
+                            <div class="bg-amber-500 rounded-full p-2 mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-gray-700">Hygienis</span>
+                        </div>
+                        <div class="flex items-center slide-in-left delay-200">
+                            <div class="bg-amber-500 rounded-full p-2 mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-gray-700">Rasa Autentik</span>
+                        </div>
+                        <div class="flex items-center slide-in-right delay-200">
+                            <div class="bg-amber-500 rounded-full p-2 mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-gray-700">Harga Terjangkau</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full font-medium transition duration-300 slide-in-bottom">
+                        Kunjungi Warung Kami
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4 slide-in-left">Apa Kata Pelanggan</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto slide-in-left delay-100"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-amber-50 p-6 rounded-lg shadow-md slide-in-bottom">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-amber-900">Siti Rahayu</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Mie ayam di warung ini benar-benar enak! Kuahnya gurih dan ayamnya banyak. Sudah langganan sejak 2 tahun lalu."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-amber-50 p-6 rounded-lg shadow-md slide-in-bottom delay-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-amber-900">Budi Santoso</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Rasanya mirip seperti buatan nenek saya dulu. Bumbunya sangat khas dan harganya sangat terjangkau untuk kualitas seperti ini."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-amber-50 p-6 rounded-lg shadow-md slide-in-bottom delay-200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-amber-900">Dewi Lestari</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Setiap akhir pekan saya selalu mampir ke sini. Mie ayam jamurnya favorit saya! Pelayannya juga ramah dan cepat."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-amber-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 slide-in-bottom">Hubungi Kami</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto slide-in-bottom delay-100"></div>
+                <p class="mt-4 max-w-2xl mx-auto slide-in-bottom delay-200">Kami siap melayani pesanan dan pertanyaan Anda. Silakan hubungi kami melalui form atau informasi kontak berikut.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2 slide-in-left">
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-1">Nama Lengkap</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 rounded bg-amber-800 border border-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-white placeholder-amber-400">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 rounded bg-amber-800 border border-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-white placeholder-amber-400">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-1">Pesan</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 rounded bg-amber-800 border border-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 text-white placeholder-amber-400"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded font-medium transition duration-300">Kirim Pesan</button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2 slide-in-right">
+                    <div class="bg-amber-800 p-6 rounded-lg h-full">
+                        <h3 class="text-xl font-bold mb-4">Informasi Kontak</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start slide-in-left delay-100">
+                                <i class="fas fa-map-marker-alt text-amber-300 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium">Alamat</h4>
+                                    <p class="text-amber-200">Jl. Raya Mie Ayam No. 123, Kelurahan Bakmi, Kecamatan Kwetiau, Kota Jakarta</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start slide-in-right delay-100">
+                                <i class="fas fa-phone-alt text-amber-300 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium">Telepon</h4>
+                                    <p class="text-amber-200">(021) 1234-5678</p>
+                                    <p class="text-amber-200">0812-3456-7890</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start slide-in-left delay-200">
+                                <i class="fas fa-envelope text-amber-300 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <p class="text-amber-200">info@warungmieayam.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start slide-in-right delay-200">
+                                <i class="fas fa-clock text-amber-300 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium">Jam Buka</h4>
+                                    <p class="text-amber-200">Senin - Minggu: 08.00 - 21.00 WIB</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 slide-in-bottom">
+                            <h4 class="font-medium mb-2">Follow Kami</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-amber-700 flex items-center justify-center hover:bg-amber-600 transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-amber-700 flex items-center justify-center hover:bg-amber-600 transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-amber-700 flex items-center justify-center hover:bg-amber-600 transition duration-300">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Now Banner -->
+    <section id="order" class="py-12 bg-amber-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 slide-in-left">Siap Menikmati Mie Ayam Spesial Kami?</h2>
+            <p class="text-xl mb-6 max-w-2xl mx-auto slide-in-right">Pesan sekarang dan dapatkan pengalaman kuliner yang tak terlupakan!</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 slide-in-bottom">
+                <a href="tel:+6281234567890" class="bg-white hover:bg-gray-100 text-amber-600 px-8 py-3 rounded-full font-medium text-lg transition duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i> Telepon Kami
+                </a>
+                <a href="https://wa.me/6281234567890" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-medium text-lg transition duration-300">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0 slide-in-left">
+                    <i class="fas fa-utensils text-2xl text-amber-300"></i>
+                    <span class="text-xl font-bold">Warung Mie Ayam</span>
+                </div>
+                <div class="text-center md:text-right slide-in-right">
+                    <p>&copy; 2023 Warung Mie Ayam. All Rights Reserved.</p>
+                    <p class="text-amber-300 mt-1">Made with <i class="fas fa-heart"></i> in Jakarta</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Change active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll animation
+        const scrollElements = document.querySelectorAll('.slide-in-left, .slide-in-right, .slide-in-bottom');
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+
+        const elementOutofView = (el) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop > (window.innerHeight || document.documentElement.clientHeight)
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add('animate');
+        };
+
+        const hideScrollElement = (element) => {
+            element.classList.remove('animate');
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                } else if (elementOutofView(el)) {
+                    hideScrollElement(el);
+                }
+            });
+        };
+
+        // Initialize animation state
+        scrollElements.forEach((el) => {
+            hideScrollElement(el);
+        });
+
+        window.addEventListener('scroll', () => {
+            handleScrollAnimation();
+        });
+
+        // Run once on page load
+        handleScrollAnimation();
+    </script>
+</body>
+</html>
